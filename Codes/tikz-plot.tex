@@ -1,0 +1,19 @@
+\documentclass[platex,a4paper,12pt,dvipdfmx]{jsarticle}
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tikzpicture}
+% sets up axis
+  \draw [thin] (-3.2,0)--(3.2,0) node[right]{$x$};
+  \draw [thin] (0,-1.1)--(0,10) node[left]{$y$};
+% plots the sinewave
+  \draw [red,domain=-3.2:3.2] plot (\x,{sin(\x r)});
+  \node (sin) at (-3.14,0)[above]{$y=\sin(x)$};
+  \node (pi) at (3.14,0)[below]{$\pi$};
+
+% plots the x^2
+  \draw [green,domain=-3.2:3.2] plot (\x,{(\x)^2});
+  \node (x2) at (2,4)[right]{$y=x^2$};
+\end{tikzpicture}
+\end{document}
